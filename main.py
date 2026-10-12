@@ -1,10 +1,18 @@
-t = int(input())
+def make_m(depth, num):
+    global result
+    if num == K:
+        result += 1
+        return
+    if depth == N: return
 
-for tc in range(1, t+1):
-    number_list, exchange_count = map(int, input().split())
-    answer = ''
+    make_m(depth + 1, num)
+    make_m(depth + 1, num + depth)
+
+result = 0
+N = 10
+K = 7
+
+make_m(1, 0)
 
 
-
-
-    print(f'#{tc} {answer}')
+print(f'#{result}')
